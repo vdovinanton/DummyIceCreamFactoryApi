@@ -22,5 +22,22 @@ Navigate to the *.sln directory, launch with dependencies:
 ```
 docker-compose up
 ```
+Build all and launch in detach mode
+```
+docker-compose up --build -d
+```
 
 ### Dependecies 
+**Postgras** 
+
+Image https://hub.docker.com/_/postgres
+
+- Connection inside the same network `network-bridge`
+  - Use host as the service name - **app_db**
+- Connection via host machine
+  - Use host as **localhost:5432**
+- Connection inside container via terminal
+  - ```
+    psql -h localhost -U postgres
+    ```
+    and type `\l` to display all databases
